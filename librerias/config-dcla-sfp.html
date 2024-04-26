@@ -1,0 +1,49 @@
+<!--Aplicar valores proporcionados en el achivo .env de la siguiente manera:
+    ¡IMPORTANTE!   
+            Para la bandera "HOSTNAME":si se va a ocupar el sistema con ip:puerto, solo en esta ponga la IP del "${DOMINIO_FRONT_DECLARANET}"
+            de ser con dominio proporcione el valor asignado a: ${DOMINIO_FRONT_DECLARANET}
+            Para la bandera "IDP_HOSTNAME":si se va a ocupar el sistema con ip:puerto, solo en esta ponga la IP del "${DOMINIO_IDENTIDAD}"
+            de ser con dominio proporcione el valor asignado a: ${DOMINIO_IDENTIDAD}
+            Para la bandera "SP_HOSTNAME":si se va a ocupar el sistema con ip:puerto, solo en esta ponga la IP del "${DOMINIO_FRONT_CSP}"
+            de ser con dominio proporcione el valor asignado a: ${DOMINIO_FRONT_CSP}
+            Para la bandera "SP_HOSTNAME":si se va a ocupar el sistema con ip:puerto, solo en esta ponga la IP del "${DOMINIO_FRONT_OPER}"
+            de ser con dominio proporcione el valor asignado a: ${DOMINIO_FRONT_OPER}
+            Para la bandera "OMEXT_HOSTNAME":si se va a ocupar el sistema con ip:puerto, solo en esta ponga la IP del "${DOMINIO_FRONT_OMEXT}"
+            de ser con dominio proporcione el valor asignado a: ${DOMINIO_FRONT_OMEXT}
+
+            Para la variable "API_SIGN" recibe los siguientes parametros, dependiendo del ambiente a desplegar.
+            "API_SIGN": "STAGING" o "PRODUCTION"
+ 
+    REMPLAZAR :
+        ${DOMINIO_KONG} por el valor asignado en .env
+        ${DOMINIO_IDENTIDAD} por el valor asignado en .env
+        ${ID_CLIENTE} por el valor asignado en .env
+        ${SECRET_KEY} por el valor asignado en .env
+
+NOTA: al realizar el remplazo de las varaibles, elimine todo el comentario de lo contrario mandara error el despligue.
+-->
+{
+"HOSTNAME": "${DOMINIO_FRONT_DECLARANET}",
+"API_BASE": "http://${DOMINIO_KONG}/declaranet",
+"API_ENTES": "http://${DOMINIO_KONG}/entes",
+"API_CONSULTAR_ENTES": "http://${DOMINIO_KONG}/declaranet/consultar-ente",
+"API_RENOVAR": "http://${DOMINIO_KONG}/renovarToken",
+"ID_CLIENTE": "${ID_CLIENTE}",
+"SECRET_KEY": "${SECRET_KEY}",
+"ID_CLIENTE_SIGN": "{Tramitar-en- SFP-contacto Javier Zamudio}",
+"SECRET_KEY_SIGN": "{Tramitar-en- SFP-contacto Javier Zamudio}",
+"API_IDP": "http://${DOMINIO_IDENTIDAD}/assets/plugin/DnetTool.js",
+"API_SIGN": "STAGING",
+"API_IDP_AUTH": "http://${DOMINIO_KONG}/identidad/login",
+"IDP_HOSTNAME": "${DOMINIO_IDENTIDAD}",
+"IDP_API_REGISTER": "http://${DOMINIO_KONG}/identidad/registro",
+"SP_HOSTNAME": "${DOMINIO_FRONT_CSP}",
+"API_KONG": "http://${DOMINIO_KONG}",
+"OPER_ID_CLIENTE": "${OPER_ID_CLIENTE}",
+"OPER_SECRET_KEY": "${OPER_SECRET_KEY}",
+"OPER_HOSTNAME": "${DOMINIO_FRONT_OPER}",
+"OMEXT_ID_CLIENTE": "${OMEXT_ID_CLIENTE}",
+"OMEXT_SECRET_KEY": "${OMEXT_SECRET_KEY}",
+"OMEXT_HOSTNAME": "${DOMINIO_FRONT_OMEXT}",
+"LOGGER": false
+}

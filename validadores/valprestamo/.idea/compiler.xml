@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for ValPrestamos" enabled="true">
+        <sourceOutputDir name="src/main/generated" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <option name="outputDirectory" value="$PROJECT_DIR$/src/main" />
+        <module name="ValPrestamos" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ValPrestamos" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ValPrestamos" options="-AoutputDirectory=$PROJECT_DIR$/src/main" />
+    </option>
+  </component>
+</project>
